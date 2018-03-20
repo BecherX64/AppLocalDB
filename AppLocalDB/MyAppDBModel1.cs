@@ -5,10 +5,10 @@ namespace AppLocalDB
 	using System.ComponentModel.DataAnnotations.Schema;
 	using System.Linq;
 
-	public partial class Model1 : DbContext
+	public partial class MyAppDBModel1 : DbContext
 	{
-		public Model1()
-			: base("name=Model1")
+		public MyAppDBModel1()
+			: base("name=MyAppDBModel")
 		{
 		}
 
@@ -18,6 +18,11 @@ namespace AppLocalDB
 		{
 			modelBuilder.Entity<Product>()
 				.Property(e => e.Name)
+				.IsFixedLength()
+				.IsUnicode(false);
+
+			modelBuilder.Entity<Product>()
+				.Property(e => e.Desc)
 				.IsUnicode(false);
 		}
 	}

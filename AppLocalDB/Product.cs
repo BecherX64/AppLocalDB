@@ -12,7 +12,10 @@ namespace AppLocalDB
         public int Id { get; set; }
 
         [Required]
-        [StringLength(50)]
+        [StringLength(10)]
         public string Name { get; set; }
+
+        [StringLength(50)]
+        public string Desc { get; set; }
     }
 }
